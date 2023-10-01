@@ -187,7 +187,8 @@ if FILE_PATH_CSV is not None and FILE_PATH_INDEX is not None:
         # Generate response
         st.session_state['user_queries'] += user_query + " || "
         print(st.session_state['user_queries'])
-        output = get_completion(st.session_state['user_queries'])
+        output = get_completion( user_query)
+        # output = get_completion(st.session_state['user_queries'])
         print(output)
         try:
             output = json.loads(output)
